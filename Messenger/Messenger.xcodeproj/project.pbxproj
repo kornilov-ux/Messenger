@@ -19,6 +19,7 @@
 		2437980B2A2250D30076070C /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437980A2A2250D30076070C /* VideoPlayerViewController.swift */; };
 		2437980D2A2251170076070C /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437980C2A2251170076070C /* NewConversationViewController.swift */; };
 		2437980F2A22514B0076070C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437980E2A22514B0076070C /* ProfileViewController.swift */; };
+		243798122A2280270076070C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243798112A2280270076070C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +32,12 @@
 		243797F62A221B840076070C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243797F82A221B840076070C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		243798042A224FF30076070C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		243798062A2250760076070C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		243798062A2250760076070C /* RegisterViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; wrapsLines = 0; };
 		243798082A2250BA0076070C /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		2437980A2A2250D30076070C /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		2437980C2A2251170076070C /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		2437980E2A22514B0076070C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		243798112A2280270076070C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				243797EE2A221B830076070C /* ConversationsViewController.swift */,
-				243798042A224FF30076070C /* LoginViewController.swift */,
-				243798062A2250760076070C /* RegisterViewController.swift */,
+				243798102A225F600076070C /* Login */,
 				243798082A2250BA0076070C /* PhotoViewerViewController.swift */,
 				2437980A2A2250D30076070C /* VideoPlayerViewController.swift */,
 				2437980C2A2251170076070C /* NewConversationViewController.swift */,
@@ -120,6 +121,7 @@
 			children = (
 				243797EA2A221B830076070C /* AppDelegate.swift */,
 				243797EC2A221B830076070C /* SceneDelegate.swift */,
+				243798112A2280270076070C /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -131,6 +133,15 @@
 				243797F52A221B840076070C /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		243798102A225F600076070C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				243798042A224FF30076070C /* LoginViewController.swift */,
+				243798062A2250760076070C /* RegisterViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				2437980D2A2251170076070C /* NewConversationViewController.swift in Sources */,
 				243797EF2A221B830076070C /* ConversationsViewController.swift in Sources */,
 				2437980B2A2250D30076070C /* VideoPlayerViewController.swift in Sources */,
+				243798122A2280270076070C /* Extensions.swift in Sources */,
 				243797EB2A221B830076070C /* AppDelegate.swift in Sources */,
 				2437980F2A22514B0076070C /* ProfileViewController.swift in Sources */,
 				243797ED2A221B830076070C /* SceneDelegate.swift in Sources */,
