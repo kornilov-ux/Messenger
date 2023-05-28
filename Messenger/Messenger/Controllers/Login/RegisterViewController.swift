@@ -18,7 +18,7 @@ private let scrollView: UIScrollView = {
 
 private let imageView: UIImageView = {
    let imageView = UIImageView()
-	imageView.image = UIImage(systemName: "person")
+	imageView.image = UIImage(systemName: "person.circle")
 	imageView.tintColor = .gray
 	imageView.contentMode = .scaleAspectFit
 	imageView.layer.masksToBounds = true
@@ -188,18 +188,39 @@ override func viewDidLayoutSubviews() {
 	}
 	
 	// Firebase Log In
-	FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
-		guard let result = authResult, error == nil else {
-			print("error")
+	
+	DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
+		guard let strongSelf = self else {
 			return
 		}
-		let user = result.user
-		print("created user: \(user)")
+		
+		guard !exists else {
+			// user already exists
+			strongSelf.alertUserLogenError(message: "This user account for that email address already exists")
+			return
+		}
+		
+		FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
+			
+			guard authResult != nil, error == nil else {
+				print("error")
+				return
+			}
+			
+			DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
+																lastName: lastName,
+																emailAddress: email))
+			
+			strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+		})
 	})
+	
+
 }
 
-func alertUserLogenError() {
-	let alert = UIAlertController(title: "Damn", message: "Please, enter all information to create a new account",
+func alertUserLogenError(message: String = "Please, enter all information to create a new account") {
+	let alert = UIAlertController(title: "Damn", 
+								  message: message,
 								  preferredStyle: .alert)
 	alert.addAction(UIAlertAction(title: "Dismiss",
 								  style: .cancel,
